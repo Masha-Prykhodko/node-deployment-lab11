@@ -5,7 +5,7 @@ export function readConfig(env = process.env) {
   if (!Number.isInteger(port) || port < 1 || port > 65535) {
     throw new Error('PORT must be an integer from 1 to 65535');
   }
-  const environment = env.APP_ENV || 'development';
+  const environment = env.NODE_ENV || 'development';
   if (!['development', 'staging', 'production'].includes(environment)) {
     throw new Error('APP_ENV must be development, staging or production');
   }
